@@ -19,6 +19,7 @@
                 <div class="hidden md:flex space-x-6">
                     <a href="{{ route('home') }}" class="text-gray-700 hover:text-blue-600">Nyitó oldal</a>
                     <a href="{{ route('about') }}" class="text-gray-700 hover:text-blue-600">Rólunk</a>
+                    <a href="{{ route('events.index') }}" class="text-gray-700 hover:text-blue-600">Események</a>
                 </div>
                 <label for="mobil-menu-toggle" class="md:hidden cursor-pointer">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,11 +33,12 @@
             <div class="hidden peer-checked:block md:hidden space-y-2 ms-2">
                 <a href="{{ route('home') }}" class="block text-gray-700 hover:text-blue-600">Nyitó oldal</a>
                 <a href="{{ route('about') }}" class="block text-gray-700 hover:text-blue-600">Rólunk</a>
+                <a href="{{ route('events.index') }}" class="block text-gray-700 hover:text-blue-600">Események</a>
             </div>
         </nav>
     </header>
 
-    <main class="flex-1">
+    <main class="flex-1 max-w-6xl w-full mx-auto mt-3">
         @yield('content')
     </main>
 
