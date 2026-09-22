@@ -9,7 +9,7 @@
 
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        @foreach ($events as $event)
+        @forelse ($events as $event)
             <div class="bg-white round-lg shadow flex flex-col p-6" >
                 <h2 class="text-lg font-semibol mb-2">{{ $event->title }}</h2>
                 <p class="text-gray-600 text-sm flex-1">{{ $event->description }}</p>
@@ -17,6 +17,8 @@
                     {{ $event->event_date->format('Y-m-d H:i') }}
                 </p>
             </div>
-        @endforeach
+        @empty
+            <p class="text-gray-500">Jelenleg nincsenek események.</p>
+        @endforelse
     </div>
 @endsection

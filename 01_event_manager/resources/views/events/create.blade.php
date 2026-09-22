@@ -7,22 +7,23 @@
         <div class="mb-2">
             <label for="title" class="block text-sm text-gray-700 mb-1" >Cím</label>
             <input type="text" name="title" id="title"
-                class="w-full border border-gray-300 rounded p-1 focus:outline-none focus:border-blue-500 ">
+                class="w-full border border-gray-300 rounded p-1 focus:outline-none focus:border-blue-500 @error('title') border-red-600 @enderror" value="{{old('title')}}">
                 @error('title')
                     <p class="text-sm text-red-600">{{$message}}</p>
                 @enderror
         </div>
         <div class="mb-2">
             <label class="block text-sm text-gray-700 mb-1">Leírás</label>
-            <textarea name="description" class="w-full border border-gray-300 rounded p-1 focus:outline-none focus:border-blue-500 "></textarea>
+            <textarea name="description" class="w-full border border-gray-300 rounded p-1 focus:outline-none focus:border-blue-500 @error('description') border-red-600 @enderror" >{{old('description')}}</textarea>
              @error('description')
                     <p class="text-sm text-red-600">{{$message}}</p>
                 @enderror
         </div>
         <div class="mb-2">
             <label class="block text-sm text-gray-700 mb-1">Dátum és időpont</label>
-            <input name="event_date" type="date"
-                class="w-full border border-gray-300 rounded p-1 focus:outline-none focus:border-blue-500 ">
+            <input name="event_date" type="date" value="{{old('event_date')}}"
+                class="w-full border border-gray-300 rounded p-1 focus:outline-none focus:border-blue-500 @error('event_date') border-red-600 @enderror"
+                >
                 @error('event_date')
                     <p class="text-sm text-red-600">{{$message}}</p>
                 @enderror

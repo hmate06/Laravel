@@ -11,7 +11,7 @@ class EventController extends Controller
     public function index()
     {
         // $events = Event::all();
-        $events = Event::orderBy('event_date')->get();
+        $events = Event::orderBy('event_date', 'asc')->get();
         // dd($events);
         return view('events.index', [
             'events' => $events,
@@ -25,7 +25,10 @@ class EventController extends Controller
 
     public function store(StoreEventRequest $request){
 
-    
-        return "ok";
+    $data = $request->validated();
+    Event::create($data);
+        return redirect()
+        ->route('events.index')
+        ->with('success', 'Az esemény sikeresen létrehozva!');
     }
 }
