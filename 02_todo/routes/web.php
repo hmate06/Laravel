@@ -16,6 +16,8 @@ Route::get('/about', function () {
 
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
+
 
 
 
