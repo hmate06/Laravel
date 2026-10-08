@@ -19,7 +19,8 @@ class TaskFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
-            'description' => $this->faker->boolean(70) ? $this->faker->paragraph() : null,
+            'description' => $this->faker->boolean(70)
+                ? $this->faker->paragraph() : null,
             'due_date' => $this->faker->dateTimeBetween('now', '+2 months'),
             'is_done' => $this->faker->boolean(30),
         ];

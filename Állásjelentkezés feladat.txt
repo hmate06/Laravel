@@ -1,0 +1,11 @@
+Állásjelentkezés: 
+- Név, 
+- E-mail, 
+- Születési év, 
+- Pozíció (select),
+- Bemutatkozás,
+- Hozzájárulás checkbox. 
+
+A jelentkező legalább 18 éves legyen, a kódnak ezt az aktuális évből kell kiszámolnia.
+
+

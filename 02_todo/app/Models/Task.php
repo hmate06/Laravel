@@ -7,22 +7,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-#[Fillable('title', 'description', 'due_date', 'is_done')]
+#[Fillable(['title', 'description', 'due_date', 'is_done'])]
 class Task extends Model
 {
     use HasFactory;
 
-    protected function casts() : array
+    protected function casts(): array
     {
         return [
             'due_date' => 'datetime',
-            'is_done' => 'boolean',
+            'is_done' => 'boolean'
         ];
-
-
-
     }
 
-
-
+    public function isOverdue(): bool
+    {
+        return !$this->is_done && $this->due_date->isPast();
+    }
 }
