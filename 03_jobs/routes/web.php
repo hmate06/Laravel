@@ -3,7 +3,5 @@
 use App\Http\Controllers\JobApplicationController;
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', [JobApplicationController::class, 'index'])()->name('job.index');
-Route::get('/jobs', [JobApplicationController::class, 'store'])()->name('job.store');
-
+Route::get('/', [JobApplicationController::class, 'index'])->name('jobs.index');
+Route::post('/jobs', [JobApplicationController::class, 'store'])->name('jobs.store');

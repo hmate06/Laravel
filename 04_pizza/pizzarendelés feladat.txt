@@ -1,0 +1,8 @@
+Pizzarendelés: 
+
+Név,
+Cím,
+Méret (select) (kicsi, nagy, XXL),
+Vastag/vékony tészta (radio)
+
+Mindgyik mező kötelező.

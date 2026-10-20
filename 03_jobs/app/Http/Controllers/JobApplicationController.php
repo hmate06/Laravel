@@ -2,18 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreJobApplicationRequest;
+use App\Models\JobApplication;
 use Illuminate\Http\Request;
 
 class JobApplicationController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $jobs = JobApplication::all(); // összes rekord
+
+        return view(
+            'home',
+            [
+                'positions' => JobApplication::POSITION,
+                'jobs' => $jobs
+            ]
+        );
     }
 
-    public function store(Request $request)
+    public function store(StoreJobApplicationRequest $request)
     {
-       dd($request->all());
-       return "ok";
+        JobApplication::create($request->safe()->except('consent'));
+        //dd($request);
+        return redirect()->route('jobs.index');
     }
 }
